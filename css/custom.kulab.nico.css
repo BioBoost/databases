@@ -1,0 +1,76 @@
+/* Monolith: #404040; */
+/* Agia: #447B82; */
+/* Lion: #2DE0DD; */
+/* DewedAge: #3C7372; */
+/* NotQuiteBlack: #303030; */
+
+.alignleft
+{
+    text-align: left;
+}
+
+#logo
+{
+    height: 100px;
+    padding: 50px;
+    float: right;
+}
+
+.floatright
+{
+    float: right;
+}
+
+.reveal li
+{
+    padding: 5px;
+}
+
+.reveal pre code
+{
+    font-size: 1.1em;
+}
+
+.wrap
+{
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.reveal p
+{
+    padding: 5px;
+}
+
+.reveal strong
+{
+    color: #C05046;
+}
+
+.reveal section img
+{
+    border: none;
+    box-shadow: none;
+}
+
+.reveal ul > li > ul > li
+{
+    font-size: 0.9em;
+    padding: 2px;
+}
+
+.reveal ul > li > ul > li > ul > li
+{
+    font-size: 0.8em;
+    padding: 2px;
+}
+
+.reveal section div code    /* Should not touch "pre code" */
+{
+    color: #4BACC6;
+    margin: 5px;
+    white-space: nowrap;
+}
