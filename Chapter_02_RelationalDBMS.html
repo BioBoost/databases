@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Databases - Course introduction</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/moderno.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="css/custom.kulab.nico.css">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+            <img id="logo" src="assets/Logo_labICT.png" alt="Logo labICT">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                    <section>
+                        <h1>Databases</h1>
+                        <h3>The Relational Database Management System</h3>
+                        <p><a href="http://labict.be">labict.be</a></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>The Relational Database</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>The Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The dominant database model is the relational database model most current major DBMS products are based on it.</li>
+                                <li>It was created by IBM engineer E. F. Codd in 1970.</li>
+                                <li>It was based on mathematics called relational algebra.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/RelationalAlgebra.png" alt="Relational Algebra" width="600">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Tasks of a relational DBMS</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Database creation</li>
+                                <li>Table creation</li>
+                                <li>Creation of supporting structures (e.g. indexes)</li>
+                                <li>Supply methods to allow all CRUD operations (create, read, update and delete)</li>
+                                <li>Maintaining database structures</li>
+                                <li>Enforce rules (constraints)</li>
+                                <li>Control concurrency</li>
+                                <li>Provide security (privilege levels)</li>
+                                <li>Allow backup and recovery of the database</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Contents of a relation database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Tables with user data</li>
+                                <li>Metadata</li>
+                                <li>Indexes</li>
+                                <li>Stored procedures</li>
+                                <li>Triggers</li>
+                                <li>Views</li>
+                                <li>Security data</li>
+                                <li>Backup/recovery data</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Tables store data in <strong>rows</strong> and <strong>columns</strong>, just like a spreadsheet.</li>
+                                <li>Each row in a table stores data about an <strong>instance</strong> of the thing of interest, also called an <strong>entity</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/Tables.png" alt="Tables example" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Relational DBMSs store data about entities in relations, which are a special type of table.</li>
+                                <li>E.F. Codd used slightly different terms to identify certain elements in a database.
+                                    <ul>
+                                        <li><strong>Relations</strong> instead of tables</li>
+                                        <li><strong>Tuples</strong> for rows</li>
+                                        <li><strong>Attributes</strong> for columns</li>
+                                    </ul>
+                                </li>
+                                <li>Mostly used interchangeably.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/TermsCodd.png" alt="Terms used by Codd" height="200">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Relations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation is a two-dimensional table that has the following characteristics:
+                                    <ul>
+                                        <li>Rows contain data about an entity.</li>
+                                        <li>Columns contain data about attributes of the entity.</li>
+                                        <li>All entries in a column are of the same kind.</li>
+                                        <li>Each column has a unique name.</li>
+                                        <li>Cells of the table hold a single value.</li>
+                                        <li>The order of the columns is unimportant.</li>
+                                        <li>The order of the rows is unimportant.</li>
+                                        <li>No two rows may be identical.</li>
+                                    </ul>
+                                </li>
+                                <li>Relations are tables <strong>but not all tables are relations</strong>.</li>
+                                <li>However the terms are used interchangeably.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Tables that are not relations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Why ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NotARelation1.jpg" alt="Table that is not a Relation" width="750">
+                        </div>
+                        <!-- Table has Multiple Entries per Cell -->
+                    </section>
+
+                    <section>
+                        <h3>Tables that are not relations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Why ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NotARelation2.jpg" alt="Table that is not a Relation" width="750">
+                        </div>
+                        <!-- Table with Required Row Order -->
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation database may have multiple relations, where each relation stores its own data.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/DatabaseWithMultipleRelations.png" alt="Database with Multiple Relations" height="200">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relational database stores data as well as the associations (relationships) between its relations.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/Associations.png" alt="Associations" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relational database is a self-describing collection of integrated tables.</li>
+                                <li>The tables are called integrated because they store data about the relationships between the rows of data.</li>
+                                <li>A database is called self-describing because it stores a description of itself.</li>
+                                <li>The self-describing data is called metadata, which is data about data.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Examples of metadata tables</li>
+                                <li>localhost » information_schema » TABLES</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/MetadataTable1.png" alt="Metadata table example">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>The Characteristics of a Relational Database</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Examples of metadata tables</li>
+                                <li>localhost » information_schema » COLUMNS</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/MetadataTable2.png" alt="Metadata table example">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Functional Dependencies</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>What do you find strange about these relations ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FunctionalDependencies1.jpg" alt="Functional Dependencies" height="300">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>What do you find strange about these relations ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FunctionalDependencies2.jpg" alt="Functional Dependencies" height="300">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A functional dependency occurs when the value of one (set of) attribute(s) determines the value of a second (set of) attribute(s)
+                                    <pre><code data-trim class="lime bigger">
+Attribute1 => (Attribute2, Attribute3, ...)
+                                    </code></pre>
+                                    <ul>
+                                        <li>The attribute on the left side of the functional dependency is called the <strong>determinant</strong>.</li>
+                                        <li>This can be red as <code>Attribute1</code> determines the value of <code>Attribute2</code> and <code>Attribute3</code>.</li>
+                                        <li>(Or: <code>Attribute2</code> and <code>Attribute3</code> depend on the value of <code>Attribute1</code>)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Waarom slaan we dan die attributen op als ze bepaald worden door andere attributen ? -->
+                        <!-- Omdat er meestal geen formule bestaat om ze te berekenen ! -->
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Functional dependencies may be based on <strong>equations</strong>:
+                                    <pre><code data-trim class="lime bigger">
+TotalPrice = Quantity x UnitPrice
+                                    </code></pre>
+                                    <pre><code data-trim class="lime bigger">
+(Quantity, UnitPrice) => TotalPrice
+                                    </code></pre>
+                                    <ul>
+                                        <li>This is however not always the case !</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Composite</strong> determinant is a determinant of a functional dependency that consists of more than one attribute.
+                                    <pre><code data-trim class="lime bigger">
+(Attribute1, Attribute2) => Attribute3
+                                    </code></pre>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Attention !</li>
+                            </ul>
+                        </div>
+
+                        <pre><code data-trim class="lime bigger">
+Attribute1 => (Attribute2, Attribute3)
+=
+Attribute1 => Attribute2
+Attribute1 => Attribute3
+                        </code></pre>
+
+                        <pre><code data-trim class="yellow bigger">
+(Attribute1, Attribute2) => Attribute3
+≠
+Attribute1 => Attribute3
+Attribute2 => Attribute3
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Can you discover the functional dependencies ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_CookieSales.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+                        <!-- total = quantity x price -->
+                        <!-- FD: (quantity, price) -> total -->
+
+                        <!-- FD: seller -> (quantity, price, total) -->
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Can you discover the functional dependencies ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_Objects.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+
+                        <!-- color -> shape -->
+                        <!-- color -> weight -->
+                        <!-- FD: color -> (shape, weight) -->
+
+                        <!-- Why can’t this be: -->
+                        <!-- shape -> color -->
+                        <!-- Because multiple colors exist for the same shape -->
+                    </section>
+
+                    <section>
+                        <h3>Functional Dependencies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Can you discover the functional dependencies ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_Sales1.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+
+                        <!-- articlenumber -> price -->
+                        <!--    => WRONG (price should be depend on ordernumber because some orders may get a discount) -->
+                        <!-- So: -->
+                        <!-- FD: (ordernumber, articlenumber) -> price -->
+
+                        <!-- Also -->
+                        <!-- FD: (ordernumber, articlenumber) -> quantity -->
+                        <!-- FD: (ordernumber, articlenumber) -> extendedprice -->
+
+                        <!-- Or together: -->
+                        <!-- FD: (ordernumber, articlenumber) -> (price, quantity, extendedprice) -->
+
+                        <!-- AND: -->
+                        <!-- FD: (quantity, price) -> extendedprice -->
+
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Keys</h2>
+                        <img src="assets/C02/Keys.jpg" alt="Keys" height="300">
+                    </section>
+
+                    <section>
+                        <h3>Keys</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A key is a combination of one or more columns that is used to <strong>identify</strong> rows in a relation.</li>
+                                <li>A <strong>composite key</strong> is a key that consists of two or more columns.</li>
+                                <li>Different keys exist:
+                                    <ul>
+                                        <li>Candidate keys</li>
+                                        <li>Primary keys</li>
+                                        <li>Surrogate keys</li>
+                                        <li>Foreign keys</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Unique Determinant Values</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A determinant is <strong>unique</strong> in a relation if and only if, it determines every other column in the relation.
+                                    <ul>
+                                        <li>A second occurrence of this determinant would otherwise mean a duplicate row in the relation and would result in a violation of the relation rules by Codd.</li>
+                                        <li>We will call this a <strong>candidate key</strong> later on.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Candidate key</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A candidate key is a key that <strong>determines all of the other columns</strong> in a relation and thus a <strong>unique determinant</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_Objects.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow bigger fragment">
+FD: color => (shape, weight)
+                        </code></pre>
+
+                        <div class="alignleft fragment">
+                            <ul>
+                                <li>So who thinks <code>color</code> is a candidate key ?</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Candidate key</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>You cannot find the determinants of all functional dependencies simply by looking for unique values in one column:
+                                    <ul>
+                                        <li>Data set limitations</li>
+                                        <li>Must be logically a determinant</li>
+                                    </ul>
+                                </li>
+                                <li>The data does not always paint a full picture. In real-life cases it will always be necessary to talk to the people who know the data and have expertise of the relationships between the data.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Candidate key</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A candidate key is a key that <strong>determines all of the other columns</strong> in a relation and thus a <strong>unique determinant</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_Sales1.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow bigger fragment wrap">
+FD1: (ordernumber, articlenumber) => (price, quantity, extendedprice)
+FD2: (quantity, price) => extendedprice
+                        </code></pre>
+
+                        <div class="alignleft fragment">
+                            <ul>
+                                <li>Why is <code>FD2: (quantity, price)</code> not a candidate key?</li>
+                                <!-- Not a unique determinant and therefore not a candidate key -->
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Candidate key</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A candidate key is a key that <strong>determines all of the other columns</strong> in a relation and thus a <strong>unique determinant</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_CookieSales.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow bigger fragment">
+FD1: seller => (quantity, price, total)
+FD2: (quantity, price) => total
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Primary keys</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A primary key is a <strong>candidate key</strong> selected as the primary means of identifying rows in a relation.
+                                    <ul>
+                                        <li>There is only one primary key per relation.</li>
+                                        <li>The primary key may be a composite key.</li>
+                                        <li>The ideal primary key is short, numeric, and never changes.
+                                            <ul>
+                                                <li>This is because of performance reasons</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/PrimaryKey.jpg" alt="Primary Key" height="200">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Surrogate keys</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A surrogate key is an artificial column added to a relation to serve as a primary key.
+                                    <ul>
+                                        <li>DBMS supplied</li>
+                                        <li>Short, numeric, and never changes - an ideal primary key</li>
+                                        <li>Has artificial values that are meaningless to users</li>
+                                        <li>Normally hidden in forms and reports</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Surrogate keys</h3>
+
+                        <div>
+                            <img src="assets/C02/SurrogateKeys.png" alt="All surrogate keys" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Surrogate keys</h3>
+
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_Stats.png" alt="World of Tanks stats surrogate keys" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Foreign keys</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A foreign key is the primary key of one relation that is placed in another relation to form an <strong>association</strong> between the relations.
+                                    <ul>
+                                        <li>A foreign key can be a single column or a composite key.</li>
+                                        <li>The term refers to the fact that the key values are foreign to the relation in which they appear as foreign key values .</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Foreign keys</h3>
+
+                        <div>
+                            <img src="assets/C02/ForeignKeys.png" alt="All foreign keys" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Foreign keys</h3>
+
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_FavoriteTanks.png" alt="World of Tanks favorite tanks" height="200">
+                        </div>
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_Stats_FavoriteTanks.png" alt="World of Tanks stats" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Overview of the keys</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Functional Dependency:
+                        <pre><code data-trim class="lime bigger">
+Determinant => (Attr1, Attr2, ...)
+                        </code></pre>
+                                    <ul>
+                                        <li><strong>Candidate key</strong>: determines all of the other columns in a relation and the key is therefore a unique determinant in the relation.</li>
+                                        <li><strong>Primary key</strong>: candidate key selected as the primary means of identifying rows in a relation.</li>
+                                        <li><strong>Surrogate key</strong>: an artificial column added to a relation to serve as a primary key.</li>
+                                        <li><strong>Foreign key</strong>: the primary key of one relation that is placed in another relation to form a relationship between the relations.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Referential Integrity Constraints</h2>
+                        <!-- <img src="assets/C02/Keys.jpg" alt="Keys" height="300"> -->
+                    </section>
+
+                    <section>
+                        <h3>Referential Integrity Constraints</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>What happens if we remove a row from the favoritetanks table ?
+                                    <ul>
+                                        <li>This leads to inconsistent data</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_FavoriteTanks.png" alt="World of Tanks favorite tanks" height="200">
+                        </div>
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_Stats_FavoriteTanks.png" alt="World of Tanks stats" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Referential Integrity Constraints</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A referential integrity constraint is a statement that limits the values of the foreign key to those already existing as primary key values in the corresponding relation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_FavoriteTanks.png" alt="World of Tanks favorite tanks" height="200">
+                        </div>
+                        <div>
+                            <img src="assets/C02/WorldOfTanks_Stats_FavoriteTanks.png" alt="World of Tanks stats" width="750">
+                        </div>
+
+                        <pre><code data-trim class="lime bigger wrap">
+RIC: WHERE worldoftanksstats.favoritetank_id MUST EXIST in favoritetanks.id
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Referential Integrity Constraints</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>For the moment these RICs are written in plain English.</li>
+                                <li>Later we will see how to add these RIC's as constraints to the database.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Modification Anomalies</h2>
+                        <!-- <img src="assets/C02/Keys.jpg" alt="Keys" height="300"> -->
+                    </section>
+
+                    <section>
+                        <h3>Modification Anomalies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>What if we wanted to delete the repair of the Drill with repairid 85.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/MA_Repairs_RemovalRepair.png" alt="Repairs relation" width="750">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Then we are actually deleting more than we probable want to. We would lose information about the drill itself.</li>
+                                <li>This is called a <strong>deletion anomaly</strong>.</li>
+                                <li>Can anyone point out the actual cause ?</li>
+                            </ul>
+                        </div>
+
+                        <!-- Actual cause? Information about different entities in a single relation. -->
+                    </section>
+
+                    <section>
+                        <h3>Modification Anomalies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>What if we wanted to add a repair to the database for a machine that hasn't been repaired before.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/MA_Repairs_AddRepair.png" alt="Repairs relation" width="750">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>But the repairmen don't know the purchase price of the machine.</li>
+                                <li>This is called an <strong>insertion anomaly</strong>.</li>
+                                <li>Can anyone point out the actual cause ?</li>
+                            </ul>
+                        </div>
+
+                        <!-- Actual cause? Information about different entities in a single relation. -->
+                    </section>
+
+                    <section>
+                        <h3>Modification Anomalies</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>What if we want to change the address of evy ?</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/MA_Employees_Update.png" alt="Eployees relation" width="750">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>If we forget to change both records, we will end up with inconsistent data.</li>
+                                <li>This is called an <strong>update anomaly</strong>.</li>
+                                <li>Can anyone point out the actual cause ?</li>
+                            </ul>
+                        </div>
+
+                        <!-- Actual cause? Information duplication. -->
+                    </section>
+
+                    <section>
+                        <h3>Solving Modification Problems</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Most modification problems are solved by breaking an existing table into two or more tables through a process known as <strong>normalization</strong>.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Solving Modification Problems</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Relations are categorized as a normal form based on which modification anomalies or other problems that they are subject to.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/SolvingModificationProblems.jpg" alt="Solving Modification Problems" width="750">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div>
+                            <img src="assets/C02/4NFs.jpg" alt="Normal Forms" width="300">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation is in <strong>1NF</strong> if it is a table that qualifies as a relation.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation is in <strong>1NF</strong> if it is a table that qualifies as a relation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NF_Not_1NF.png" alt="Not 1NF" width="750">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>This table is <strong>not in 1NF</strong> (qualify as a relation). Why ?
+                                    <ul>
+                                        <li class="fragment">Multiple attributes in single cell</li>
+                                        <li class="fragment">Duplicate rows</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation is in <strong>2NF</strong> if it is in 1NF and every non-key attribute is fully dependent on the primary key</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NF_Not_2NF.png" alt="Not 2NF" width="750">
+                        </div>
+
+                        <pre><code data-trim class="lime wrap fragment">
+FD1: (courseID, semesterID) => places, courseName
+FD2: courseID => courseName
+                        </code></pre>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>This relation is <strong>not in 2NF</strong>. Why ?
+                                    <ul>
+                                        <li class="fragment">courseName depends on part of the PK (courseID) but not the whole key</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation is in <strong>3NF</strong> if it is in 2NF and if for each functional dependency <code>X => A</code> in R at least one of the following conditions are met:
+                                    <ul>
+                                        <li>X is a key or superkey in R</li>
+                                        <li>A is a prime attribute (part of a candidate key) in R</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NF_Not_3NF.png" alt="Not 3NF" width="750">
+                        </div>
+
+                        <pre><code data-trim class="lime wrap fragment">
+FD1: (courseID, semesterID) => places, TeacherID, TeacherName
+FD2: TeacherID => TeacherName
+                        </code></pre>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>This relation is <strong>not in 3NF</strong>. Why ?
+                                    <ul>
+                                        <li class="fragment">TeacherName depends on TeacherID</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation is in <strong>3NF</strong> if it is in 2NF and if for each functional dependency <code>X => A</code> in R at least one of the following conditions are met:
+                                    <ul>
+                                        <li>X is a key or superkey in R</li>
+                                        <li>A is a prime attribute (part of a candidate key) in R</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NF_Not_BCNF.png" alt="Not BCNF" height="150">
+                        </div>
+
+                        <pre><code data-trim class="lime wrap fragment">
+FD1: (studentID, courseID) => SSN
+FD2: (SSN, courseID) => studentID
+FD3: studentID => SSN
+FD4: SSN => studentID
+                        </code></pre>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li class="fragment">This relation is <strong>in 3NF</strong> because SSN and studentID are both parts of a candidate key</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A relation R is in <strong>BCNF</strong> if it is in 3NF and for each functional dependency <code>X => A</code> in R, <strong>X is a key or superkey in R</strong>. In other words, a relation is in BCNF if every determinant is a candidate key.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/NF_Not_BCNF.png" alt="Not BCNF" height="150">
+                        </div>
+
+                        <pre><code data-trim class="lime wrap fragment">
+FD1: (studentID, courseID) => SSN
+FD2: (SSN, courseID) => studentID
+FD3: studentID => SSN
+FD4: SSN => studentID
+                        </code></pre>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>This relation is <strong>not in BCNF</strong>. Why ?
+                                    <ul>
+                                        <li class="fragment">Because SSN and studentID are not candidate or primary keys</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Normal Forms</h3>
+
+                        <blockquote cite="#">
+                            &ldquo;The data depends on the key [1NF], the whole key [2NF] and nothing but the key [3NF], so help me Codd.&rdquo; by Edgar F. Codd
+                        </blockquote>
+                    </section>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                slideNumber: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
