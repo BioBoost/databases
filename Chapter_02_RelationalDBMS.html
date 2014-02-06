@@ -1027,6 +1027,286 @@ FD4: SSN => studentID
                         </blockquote>
                     </section>
                 </section>
+
+                <section>
+                    <section>
+                        <h2>Normalization</h2>
+                        <!-- <img src="assets/C02/Keys.jpg" alt="Keys" height="300"> -->
+                    </section>
+
+                    <section>
+                        <h3>Boyce-Codd Normal Form (BCNF)</h3>
+
+                        <div class="alignleft">
+                            <ol>
+                                <li>Identify every functional dependency.</li>
+                                <li>Identify every candidate key.</li>
+                                <li>If there is a functional dependency that has a determinant that is not a candidate key:
+                                    <ul>
+                                        <li>Move the columns of that functional dependency into a new relation.</li>
+                                        <li>Leave a copy of the determinant as a foreign key in the original relation.</li>
+                                        <li>Create a referential integrity constraint between the original relation and the new relation.</li>
+                                    </ul>
+                                </li>
+                                <li>Repeat step 3 until every determinant of every relation is a candidate key.</li>
+                            </ol>
+                        </div>
+
+                        <p class="smaller yellow">In step 3, if there is more than one such functional dependency, start with the one with the most columns.</p>
+                    </section>
+
+                    <section>
+                        <h3>Boyce-Codd Normal Form (BCNF)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>You may have to remove duplicates in the new relation !</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Examples 1 - Articles</h3>
+
+                        <div class="alignleft">
+                            <ol>
+                                <li>Identify every functional dependency.</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Articles.png" alt="Articles" height="200">
+                        </div>
+
+                        <pre><code data-trim class="lime wrap fragment">
+FD1: id => (description, department, buyer)
+FD2: description => (id, department, buyer)
+FD3: buyer => department
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 1 - Articles</h3>
+
+                        <div class="alignleft">
+                            <ol start="2">
+                                <li>Identify every candidate key.
+                                    <ul>
+                                        <li>A candidate key is a key that determines all of the other columns in a relation.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <pre><code data-trim class="lime wrap">
+FD1: id => (description, department, buyer)
+FD2: description => (id, department, buyer)
+FD3: buyer => department
+                        </code></pre>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Articles.png" alt="Articles" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD1 [CK]: id => (description, department, buyer)
+FD2 [CK]: description => (id, department, buyer)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 1 - Articles</h3>
+
+                        <div class="alignleft">
+                            <ol start="3">
+                                <li>Is there a functional dependency that has a determinant that is not a candidate key ?</li>
+                            </ol>
+                        </div>
+
+                        <pre><code data-trim class="lime wrap">
+FD1: id => (description, department, buyer)
+FD2: description => (id, department, buyer)
+FD3: buyer => department
+                        </code></pre>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Articles.png" alt="Articles" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD3: buyer => department
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 1 - Articles</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Move the columns of that functional dependency into a new relation.</li>
+                                <li>Leave a copy of the determinant as a foreign key in the original relation. => <strong>Or surrogate key</strong></li>
+                                <li>Create a referential integrity constraint between the original relation and the new relation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Articles_Extract.png" alt="Articles" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Examples 1 - Articles</h3>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Articles_BuyerID.png" alt="Articles" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD1: id => (description, buyer_id)
+FD2: description => (id, buyer_id)
+                        </code></pre>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Articles_Buyers.png" alt="Buyers" height="150">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD1: id => (department, buyer)
+FD2: buyer => (department, id)
+                        </code></pre>
+
+                        <pre><code data-trim class="lime wrap fragment">
+RIC: WHERE articles.buyer_id MUST EXIST in buyers.id
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 2 - Repairs</h3>
+
+                        <div class="alignleft">
+                            <ol>
+                                <li>Identify every functional dependency.</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Repairs.png" alt="Repairs" height="200">
+                        </div>
+
+                        <pre><code data-trim class="lime wrap fragment">
+FD1: itemid => (type, purchaseprice)
+FD2: repairid => (repairdate, repairprice, itemid, type, purchaseprice)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 2 - Repairs</h3>
+
+                        <div class="alignleft">
+                            <ol start="2">
+                                <li>Identify every candidate key.
+                                    <ul>
+                                        <li>A candidate key is a key that determines all of the other columns in a relation.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <pre><code data-trim class="lime wrap">
+FD1: itemid => (type, purchaseprice)
+FD2: repairid => (repairdate, repairprice, itemid, type, purchaseprice)
+                        </code></pre>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Repairs.png" alt="Repairs" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD2 [CK]: repairid => (repairdate, repairprice, itemid, type, purchaseprice)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 2 - Repairs</h3>
+
+                        <div class="alignleft">
+                            <ol start="3">
+                                <li>Is there a functional dependency that has a determinant that is not a candidate key ?</li>
+                            </ol>
+                        </div>
+
+                        <pre><code data-trim class="lime wrap">
+FD1: itemid => (type, purchaseprice)
+FD2: repairid => (repairdate, repairprice, itemid, type, purchaseprice)
+                        </code></pre>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Repairs.png" alt="Repairs" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD1: itemid => (type, purchaseprice)
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Examples 2 - Repairs</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Move the columns of that functional dependency into a new relation.</li>
+                                <li>Leave a copy of the determinant as a foreign key in the original relation. => <strong>Or surrogate key</strong></li>
+                                <li>Create a referential integrity constraint between the original relation and the new relation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Repairs_Extract.png" alt="Repairs" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Examples 2 - Repairs</h3>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Repairs_ItemID.png" alt="Repairs" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD1: id => (date, price, item_id)
+                        </code></pre>
+
+                        <div>
+                            <img src="assets/C02/Normalization_Repairs_Items.png" alt="Items" height="150">
+                        </div>
+
+                        <pre><code data-trim class="yellow wrap fragment">
+FD1: id => (type, purchaseprice)
+                        </code></pre>
+
+                        <pre><code data-trim class="lime wrap fragment">
+RIC: WHERE repairs.item_id MUST EXIST in items.id
+                        </code></pre>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Notice how the column titles don't have to specify the entity name (subject of interest) anymore.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>More examples</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>See page 100 till 107 for 3 more examples.</li>
+                                <li>Try them out yourself !!!!!!</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
             </div>
 
         </div>
