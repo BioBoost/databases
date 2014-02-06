@@ -74,3 +74,18 @@
     margin: 5px;
     white-space: nowrap;
 }
+
+.lime
+{
+    color: lime !important;
+}
+
+.yellow
+{
+    color: yellow !important;
+}
+
+.bigger
+{
+    font-size: 1.2em !important;
+}
