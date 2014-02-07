@@ -59,7 +59,11 @@
 
                         <div class="alignleft">
                             <ul>
-                                <li>The dominant database model is the relational database model most current major DBMS products are based on it.</li>
+                                <li>The dominant database model is the relational database model.
+                                    <ul>
+                                        <li>Most current major DBMS products are based on it.</li>
+                                    </ul>
+                                </li>
                                 <li>It was created by IBM engineer E. F. Codd in 1970.</li>
                                 <li>It was based on mathematics called relational algebra.</li>
                             </ul>
@@ -191,6 +195,7 @@
                                 <li>Why ?
                                     <ul>
                                         <li class="fragment">Table with required row order</li>
+                                        <li class="fragment">All entries in a column are of the same kind.</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -206,7 +211,7 @@
 
                         <div class="alignleft">
                             <ul>
-                                <li>A relation database may have multiple relations, where each relation stores its own data.</li>
+                                <li>A relational database may have multiple relations, where each relation stores its own data.</li>
                             </ul>
                         </div>
 
@@ -289,11 +294,18 @@
                         </div>
 
                         <div>
-                            <img src="assets/C02/FunctionalDependencies1.jpg" alt="Functional Dependencies" height="200">
+                            <img src="assets/C02/FunctionalDependencies1.jpg" alt="Functional Dependencies" height="150">
                         </div>
 
                         <div>
-                            <img src="assets/C02/FunctionalDependencies2.jpg" alt="Functional Dependencies" height="200">
+                            <img src="assets/C02/FD_Users.png" alt="Functional Dependencies Users" height="200">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li class="fragment">We can determine the total price mathematically</li>
+                                <li class="fragment">If we know the username we know the firstname and lastname</li>
+                            </ul>
                         </div>
                     </section>
 
@@ -360,7 +372,7 @@ Attribute1 => Attribute2
 Attribute1 => Attribute3
                         </code></pre>
 
-                        <pre><code data-trim class="yellow bigger">
+                        <pre><code data-trim class="red bigger">
 (Attribute1, Attribute2) => Attribute3
 ≠
 Attribute1 => Attribute3
@@ -401,13 +413,13 @@ FD: seller -> (quantity, price, total)
                         </div>
 
                         <div>
-                            <img src="assets/C02/FD_Objects.png" alt="Discover the Functional Dependencies" height="200">
+                            <img src="assets/C02/FD_Users.png" alt="Discover the Functional Dependencies" height="200">
                         </div>
 
                         <pre><code data-trim class="yellow bigger fragment">
-color -> shape
-color -> weight
-FD: color -> (shape, weight)
+username -> firstname
+username -> lastname
+FD: username -> (firstname, lastname)
                         </code></pre>
 
                         <!-- Why can’t this be: -->
@@ -539,7 +551,7 @@ FD: color => (shape, weight)
                         </div>
 
                         <pre><code data-trim class="yellow bigger fragment wrap">
-FD1: (ordernumber, articlenumber) => (price, quantity, extendedprice)
+FD1 [CK]: (ordernumber, articlenumber) => (price, quantity, extendedprice)
 FD2: (quantity, price) => extendedprice
                         </code></pre>
 
@@ -565,8 +577,26 @@ FD2: (quantity, price) => extendedprice
                         </div>
 
                         <pre><code data-trim class="yellow bigger fragment">
-FD1: seller => (quantity, price, total)
+FD1 [CK]: seller => (quantity, price, total)
 FD2: (quantity, price) => total
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Candidate key</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A candidate key is a key that <strong>determines all of the other columns</strong> in a relation and thus a <strong>unique determinant</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C02/FD_Users.png" alt="Discover the Functional Dependencies" height="200">
+                        </div>
+
+                        <pre><code data-trim class="yellow bigger fragment">
+FD1: username => (firstname, lastname)
                         </code></pre>
                     </section>
 
