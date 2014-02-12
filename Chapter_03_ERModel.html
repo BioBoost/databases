@@ -318,6 +318,218 @@
                             </ul>
                         </div>
                     </section>
+
+                    <section>
+                        <h3>Minimum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Minimum cardinality is the <strong>minimum number of entity instances</strong> that <strong>must</strong> participate in a relationship.</li>
+                                <li>Minimums are generally stated as either zero or one:
+                                    <ul>
+                                        <li>If zero <strong>[0]</strong> then participation in the relationship by the entity is <strong>optional</strong>, and no entity instance must participate in the relationship.</li>
+                                        <li>If one <strong>[1]</strong> then participation in the relationship by the entity is <strong>mandatory</strong>, and at least one entity instance must participate in the relationship.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Minimum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Minimum cardinality of zero [0] indicating <strong>optional</strong> participation is indicated by placing an <strong>oval (O)</strong> next to the optional entity.</li>
+                                <li>Minimum cardinality of one [1] indicating <strong>mandatory</strong> (required) participation is indicated by placing a <strong>vertical hatsh mark (|)</strong> next to the required entity.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Minimum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Mandatory-to-mandatory relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/MinimumCardinality_mandatory_to_mandatory.jpg" alt="Minimum cardinality of mandatory-to-mandatory" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Maximum cardinality
+                                    <ul>
+                                        <li>Employee <strong>can</strong> have a maximum of one badge</li>
+                                        <li>A badge <strong>can</strong> be assigned to maximum one employee</li>
+                                    </ul>
+                                </li>
+                                <li>Minimum cardinality
+                                    <ul>
+                                        <li>Employee <strong>must</strong> have a badge</li>
+                                        <li>A badge <strong>must</strong> be assigned to an employee</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Minimum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Optional-to-optional relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/MinimumCardinality_optional_to_optional.jpg" alt="Minimum cardinality of optional-to-optional" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Maximum cardinality
+                                    <ul>
+                                        <li>Employee <strong>can</strong> have many computers</li>
+                                        <li>A computer <strong>can</strong> be assigned to maximum one employee</li>
+                                    </ul>
+                                </li>
+                                <li>Minimum cardinality
+                                    <ul>
+                                        <li>Employee <strong>may</strong> have a computer</li>
+                                        <li>A computer <strong>may</strong> be assigned to an employee</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Minimum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Optional-to-mandatory relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/MinimumCardinality_optional_to_mandatory.jpg" alt="Minimum cardinality of optional-to-mandatory" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Maximum cardinality
+                                    <ul>
+                                        <li>Employee <strong>can</strong> have many skills</li>
+                                        <li>A skill <strong>can</strong> be assigned to many employees</li>
+                                    </ul>
+                                </li>
+                                <li>Minimum cardinality
+                                    <ul>
+                                        <li>Employee <strong>must</strong> have a skill</li>
+                                        <li>A skill <strong>can</strong> be assigned to an employee</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Information Engineering (IE)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Uses &quot;crow's foot&quot; notation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/ER_vs_crowsfoot.jpg" alt="Entity Relational Model versus Crows Foot notation" width="600">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Many-to-many, optional-to-mandatory relationship</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>&quot;crow's foot&quot; notation</h3>
+
+                        <div>
+                            <img src="assets/C03/CrowsFootNotation.jpg" alt="Crows Foot notation" height="400">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>ID-Dependent Entities</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>An ID-dependent entity is an entity (child) whose identifier includes the identifier of another entity (parent).</li>
+                                <li>The ID-dependent entity is a logical extension or subunit of the parent.</li>
+                                <li>The minimum cardinality from the ID-dependent entity to the parent is always one.
+                                    <ul>
+                                        <li>In other words: the child entity can not exists without the parent entity.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>ID-Dependent Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/ERmodel_ID_Dependent_Buildings.png" alt="Apartment is ID-dependent on building" height="500">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>ID-Dependent Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/ERmodel_ID_Dependent_Patients.png" alt="Exam is ID-dependent on patient" height="500">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Weak Entities</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A weak entity is an entity whose existence depends upon another entity.</li>
+                                <li>All ID-Dependent entities are considered weak.</li>
+                                <li>There are also non-ID-dependent weak entities.
+                                    <ul>
+                                        <li>The identifier of the parent does not appear in the identifier of the weak child entity.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Weak Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/WeakEntities.jpg" alt="Weak entities" height="500">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Weak Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/WeakEntities2.jpg" alt="Weak entities" height="500">
+                        </div>
+                    </section>
                 </section>
 
             </div>
