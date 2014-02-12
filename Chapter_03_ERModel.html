@@ -162,6 +162,164 @@
                     </section>
                 </section>
 
+                <section>
+                    <section>
+                        <h2>Relationships / Associations</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Associations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Entities can be associated with one another in relationships (also referred to as associations)</li>
+                                <li>A relationship class can involve two or more entity classes.</li>
+                                <li>The <strong>degree of the relationship</strong> is the number of entity classes in the relationship:
+                                    <ul>
+                                        <li><strong>Two entities</strong> have a <strong>binary relationship</strong> of degree two.</li>
+                                        <li><strong>Three entities</strong> have a <strong>ternary relationship</strong> of degree three.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Degree of the relationship</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Binary relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/BinaryAssociation.png" alt="Example of a Binary Association" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Ternary relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/TernaryAssociation.png" alt="Example of a Ternary Association" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Entities versus Relations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The principle difference between an entity and a relation (table) is that you can express a relationship between entities without using foreign keys.</li>
+                                <li>This makes it easier to work with entities in the early design process where the very existence of entities and the relationships between them is uncertain.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/BinaryAssociation.png" alt="Example of a Binary Association" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Cardinality means &quot;count&quot; and is expressed as a number.</li>
+                                <li><strong>Maximum cardinality</strong> is the maximum number of <strong>entity instances</strong> that can participate in a relationship.</li>
+                                <li><strong>Minimum cardinality</strong> is the minimum number of <strong>entity instances</strong> that must participate in a relationship.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Maximum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>One-to-one relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/MaximumCardinality_one_to_one.jpg" alt="Maximum cardinality of one-to-one" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Employee <strong>can</strong> have a maximum of one badge</li>
+                                <li>A badge <strong>can</strong> be assigned to maximum one employee</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Maximum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>One-to-many relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/MaximumCardinality_one_to_many.jpg" alt="Maximum cardinality of one-to-many" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Employee <strong>can</strong> have many computers</li>
+                                <li>A computer <strong>can</strong> be assigned to maximum one employee</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Maximum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>many-to-many relationship</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C03/MaximumCardinality_many_to_many.jpg" alt="Maximum cardinality of many-to-many" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Employee <strong>can</strong> have many skills</li>
+                                <li>A skill <strong>can</strong> be assigned to many employees</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Maximum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>So in conclusion
+                                    <ul>
+                                        <li>There are three types of maximum cardinality
+                                            <ul>
+                                                <li>One-to-One [1:1]</li>
+                                                <li>One-to-Many [1:N]</li>
+                                                <li>Many-to-Many [N:M]</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
             </div>
 
         </div>
