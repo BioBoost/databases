@@ -4,7 +4,8 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Databases - Data Modeling with the Entity-Relationship Model</title>
+        <title>Databases - Chapter 4 – From data model to database
+</title>
 
         <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
         <meta name="author" content="Hakim El Hattab">
@@ -530,6 +531,101 @@
                             <img src="assets/C03/WeakEntities2.jpg" alt="Weak entities" height="500">
                         </div>
                     </section>
+
+                    <section>
+                        <h3>Has-A associations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The associations we have been discussing are known as <strong>HAS-A</strong> associations.</li>
+                                <li>Each entity instance has a associations with another entity instance.
+                                    <ul>
+                                        <li>An EMPLOYEE has one or more COMPUTERs.</li>
+                                        <li>A COMPUTER has an assigned EMPLOYEE.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Subtype Entities</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A subtype entity is a special case of a supertype entity.</li>
+                                <li>The supertype contains all common attributes, while the subtypes contain specific attributes.</li>
+                                <li>The supertype may have a <strong>discriminator</strong> attribute which indicates the subtype.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Subtype Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/ERmodel_ExclusiveSubtype_Student.png" alt="Exclusive Subtype" height="500">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Subtypes: Exclusive or Inclusive</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>If subtypes are <strong>exclusive</strong>, one supertype relates to at most one subtype.</li>
+                                <li>If subtypes are <strong>inclusive</strong>, one supertype can relate to one or more subtypes.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Exclusive Subtype Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/ERmodel_ExclusiveSubtype_Employee.png" alt="Exclusive Subtype" height="500">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Inclusive Subtype Entities</h3>
+
+                        <div>
+                            <img src="assets/C03/ERmodel_InclusiveSubtype.png" alt="Inclusive Subtype" height="500">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Subtypes - IS-A</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Associations connecting supertypes and subtypes are called <strong>IS-A</strong> associations, because a subtype IS A supertype.</li>
+                                <li>The <strong>identifier</strong> of the supertype and all of its subtypes must be identical
+                                    <ul>
+                                        <li>The identifier of the supertype becomes the identifier of the related subtype(s).</li>
+                                    </ul>
+                                </li>
+                                <li>Subtypes are used to avoid value-inappropriate <strong>NULLs</strong> (attributes that have an empty value).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>IE Crow's Foot Symbol Summary</h3>
+
+                        <div>
+                            <img src="assets/C03/CrowsFootSymbolSummary_1.png" alt="IE Crow's Foot Symbol Summary - Part 1" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>IE Crow's Foot Symbol Summary</h3>
+
+                        <div>
+                            <img src="assets/C03/CrowsFootSymbolSummary_2.png" alt="IE Crow's Foot Symbol Summary - Part 2" width="700">
+                        </div>
+                    </section>
                 </section>
 
                 <section>
@@ -547,6 +643,7 @@
                             </ul>
                         </div>
                     </section>
+                </section>
 
             </div>
 
