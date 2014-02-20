@@ -48,6 +48,1001 @@
                     </section>
                 </section>
 
+                <section>
+                    <section>
+                        <h2>Steps to take</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Steps to take</h3>
+
+                        <div>
+                            <img src="assets/C04/StepsToTake.jpg" alt="Different steps to take" width="700">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Step 1 - Creating a relation for each entity</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Step a - Create table for each entity</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Use the same name of the entity for the table.</li>
+                                <li>Pick the primary key (identity of entity)
+                                    <ul>
+                                        <li>Designated using a key symbol.</li>
+                                        <li>The ideal primary key is short, numeric, and fixed.</li>
+                                        <li>Surrogate keys meet the ideal, but have no meaning to users.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step1_Employee_CreateRelation.jpg" alt="From Employee entity to Employee relation" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b - Specify Candidate Keys</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The terms candidate key and alternate key are synonymous.</li>
+                                <li>Candidate keys are unique determinants of a relation.</li>
+                                <li>Some use AKn.m notation, where n is the number of the alternate key, and m is the column number in that alternate key.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step1_Employee_SpecifyCandidateKeys.png" alt="From Employee entity to Employee relation" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c - Specify Column Properties: Null Status</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li><strong>Null status</strong> indicates whether or not the value of the column can be NULL.</li>
+                                <li>An alternate key can have a null status of NULL.</li>
+                                <li>If a value is however specified, then it must be unique !</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step1_Employee_NullStatus.jpg" alt="From Employee entity to Employee relation" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c - Specify Column Properties: Data Types</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Generic data types:
+                                    <ul>
+                                        <li>CHAR(n) and VARCHAR(n)</li>
+                                        <li>DATE, TIME and DATETIME </li>
+                                        <li>MONEY</li>
+                                        <li>INTEGER</li>
+                                        <li>DECIMAL</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step1_Employee_DataTypes.jpg" alt="From Employee entity to Employee relation" height="250">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Reference - Sql Server 2008 Data Types</h3>
+
+                        <div>
+                            <img src="assets/C04/Reference_SqlServer2008_DataTypes.png" alt="Sql Server 2008 Data Types" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Reference - MySQL 5.1 Data Types</h3>
+
+                        <div>
+                            <img src="assets/C04/Reference_MySQL51_DataTypes_1.png" alt="MySQL 5.1 Data Types" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Reference - MySQL 5.1 Data Types</h3>
+
+                        <div>
+                            <img src="assets/C04/Reference_MySQL51_DataTypes_2.png" alt="MySQL 5.1 Data Types" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Reference - MySQL 5.1 Data Types</h3>
+
+                        <div>
+                            <img src="assets/C04/Reference_MySQL51_DataTypes_3.png" alt="MySQL 5.1 Data Types" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step d - Specify Column Properties: Default Value</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A default value is the value supplied by the DBMS when a new row is created and the attribute is not specified by the user.</li>
+                                <li>The <strong>most common</strong> default value is <strong>NULL</strong>.</li>
+                                <li>Other common default values are
+                                    <ul>
+                                        <li>A specified string (ex. "New Employee")</li>
+                                        <li>The current date or time</li>
+                                        <li>The result of triggers
+                                            <ul>
+                                                <li>Default value is determined by some logic or is calculated based on other values.</li>
+                                                <li>We see database triggers later.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step d - Specify Column Properties: Default Value</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Default values can be documented as followed.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step1_Employee_DefaultValues.jpg" alt="From Employee entity to Employee relation" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step d - Specify Column Properties: Data Constraints</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Data constraints are limitations on data values:
+                                    <ul>
+                                        <li><strong>Domain constraint</strong>: column values must be in a given set of specific values.
+                                            <ul>
+                                                <li>Examples:
+                                                    <ul>
+                                                        <li>Gender: Male or Female</li>
+                                                        <li>Employee contract: part-time, full time, ...</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li><strong>Range constraint</strong>: column values must be within a given range of values.
+                                            <ul>
+                                                <li>Examples:
+                                                    <ul>
+                                                        <li>Birthdate: between 1920 and NOW()</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step d - Specify Column Properties: Data Constraints</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Data constraints are limitations on data values:
+                                    <ul>
+                                        <li><strong>Intrarelation constraint</strong>: column values are limited by comparison to values in other columns in the same table.
+                                            <ul>
+                                                <li>Examples:
+                                                    <ul>
+                                                        <li>Date of contract renewal > date of current contract</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li><strong>Interrelation constraint</strong>: column values are limited by comparison to values in other columns in other tables.
+                                            <ul>
+                                                <li>Examples:
+                                                    <ul>
+                                                        <li>Referential integrity constraints on foreign keys.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step d - Specify Column Properties: Verify normalization</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The tables should be normalized based on the data model.</li>
+                                <li>Verify that all tables are:
+                                    <ul>
+                                        <li>BCNF</li>
+                                        <li>4NF</li>
+                                    </ul>
+                                </li>
+                                <li>We see this later</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Step 2 – Creating associations (relationships)</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Step 2 – Creating associations (relationships)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Associations between entities are realized by adding foreign keys (which point to the primary key of the other table in the relationship).</li>
+                                <li>Start with associations between <strong>strong</strong> entities.</li>
+                                <li>Weak entities are entities which cannot exist on their own.
+                                    <ul>
+                                        <li>Weak entities are entities which cannot exist on their own.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- A book belongs to an owner, and an owner can own multiple books. But the book can exist also without the owner and it can change the owner. The relationship between a book and an owner is a non identifying relationship. -->
+
+                        <!-- A book however is written by an author, and the author could have written multiple books. But the book needs to be written by an author it cannot exist without an author. Therefore the relationship between the book and the author is an identifying relationship.
+                         -->
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - 1:1</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Place the key of one entity in the other entity as a foreign key.
+                                    <ul>
+                                        <li>Either design will work</li>
+                                    </ul>
+                                </li>
+                                <li>Minimum cardinality considerations may be important.
+                                    <ul>
+                                        <li>O-M will require a different design than M-O.</li>
+                                        <li>One design will be very preferable.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - 1:1</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Locker_Strong_OneToOne.jpg" alt="One to One association" height="350">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Enforcement of maximum cardinality:
+                                    <ul>
+                                        <li><strong>Foreign key</strong> is indicated as <strong>candidate</strong> key to force uniqueness</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - 1:1</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Locker_Strong_OneToOne.jpg" alt="One to One association" height="300">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>There is no preferred implementation (unless logically selected based on business logic).
+                                    <ul>
+                                        <li>There would have been a preferred implementation however in the case of a M-O or O-M association (see book page 211 – Opmerking).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - 1:N</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Place the primary key of the table on the one side of the relationship into the table on the many side of the relationship as the foreign key.</li>
+                                <li>The one side is the <strong>parent</strong> table and the many side is the <strong>child</strong> table, so "place the key of the parent in the child."</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - 1:N</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Company_1ToN.png" alt="One to N association" height="350">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Who else thinks there is something wrong with this example?</li>
+                            </ul>
+                        </div>
+
+                        <!-- Why bad example? I would think that department is a weak entity and cannot exist without a company. -->
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>In an N:M strong entity relationship there is <strong>no place</strong> for the <strong>foreign key</strong> in either table.
+                                    <ul>
+                                        <li>A COMPANY may supply many PARTs.</li>
+                                        <li>A PART may be supplied by many COMPANYs.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step2_Company_NToM.png" alt="Many to Many association" height="200">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The solution is to create an intersection relation or association relation that stores data about the corresponding rows from each entity.
+                                    <ul>
+                                        <li>An intersection relation consists only of the primary keys of each relation which form a composite primary key.</li>
+                                        <li>An association relation consists of the primary keys of each relation which form a composite primary key with extra attributes.</li>
+                                    </ul>
+                                </li>
+                                <li>Each relation's primary key becomes a foreign key linking back to that relation.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Company_NToM.png" alt="Many to Many association" height="150">
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step2_Company_NToM_Intersection.png" alt="Many to Many association" height="350">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Company_NToM_Intersection.png" alt="Many to Many association" height="350">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Notice the cardinalities
+                                    <ul>
+                                        <li>Weak and ID-dependant => <strong>mandatory</strong></li>
+                                        <li>Keep original cardinalities on side of intersection / association relation</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Characters_NToM.png" alt="Many to Many association" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Characters_NToM_Association.png" alt="Many to Many association" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Higher order relationships can be implemented using binary relationships combined with intersection/association relations.
+                                    <ul>
+                                        <li>Associations between multiple entities are possible.</li>
+                                        <li>Each entity is associated with the association relation using a binary association.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step2_Projects_NToM.png" alt="Ternary association" height="200">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Strong Entity Associations - N:M</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Projects_NToM_Association.png" alt="Ternary association" height="400">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Overview of intersection and association relations</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>An <strong>intersection</strong> relation
+                                    <ul>
+                                        <li>Holds the relationships between two strong entities in an N:M relationship</li>
+                                        <li>Contains only the primary keys of the two entities
+                                            <ul>
+                                                <li>As a composite primary key</li>
+                                                <li>As foreign keys</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>An <strong>association</strong> relation
+                                    <ul>
+                                        <li>Has all the characteristics of an intersection relation</li>
+                                        <li>PLUS it has one or more columns of attributes specific to the associations of the other two entities</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – Relationships with ID-Dependent Entities</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Three typical uses for ID-Dependent Entities:
+                                    <ul>
+                                        <li>Representing N:M Relationships
+                                            <ul>
+                                                <li>We just discussed this</li>
+                                            </ul>
+                                        </li>
+                                        <li>The Multivalued Attribute Pattern</li>
+                                        <li>Archetype/Instance Pattern</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – The Multivalued Attribute Pattern</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Many entities have attributes that are <strong>multivalued</strong>.</li>
+                                <li>One example is a contact person for a company. One company can have multiple contacts. Creating a new row in the company entity for each contact would create a multivalued dependency.
+                                    <ul>
+                                        <li>The solution to this is store the contacts in a separate relation.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – The Multivalued Attribute Pattern</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Contact_MultivaluedAttributePattern.png" alt="The Multivalued Attribute Pattern" height="400">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – The Archetype/Instance Pattern</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Many entities have attributes that are <strong>multivalued</strong>.</li>
+                                <li>One example is a contact person for a company. One company can have multiple contacts. Creating a new row in the company entity for each contact would create a multivalued dependency.
+                                    <ul>
+                                        <li>The solution to this is store the contacts in a separate relation.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – The Archetype/Instance Pattern</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Used when you have a number of objects (instances) that are bound to some blueprint like model (archetype).</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step2_ArchetypeInstancePattern.png" alt="The Archetype/Instance Pattern" height="400">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – The Archetype/Instance Pattern</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Class_Archetype_IdDependent.png" alt="The Archetype/Instance Pattern" height="400">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – The Archetype/Instance Pattern</h3>
+
+                        <div>
+                            <img src="assets/C04/Step2_Class_Archetype_NonIdDependent.png" alt="The Archetype/Instance Pattern" height="400">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Subtype Relationships</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Primary keys of the subtypes are the same as of the super type.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step2_Subtype.png" alt="Subtypes" height="300">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Step 3 - Specifying the logic for enforcing the minimum cardinality</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Minimum Cardinality</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Relationships can have the following types of minimum cardinality:
+                                    <ul>
+                                        <li>O-O: parent optional and child optional</li>
+                                        <li>M-O: parent mandatory and child optional</li>
+                                        <li>O-M: parent optional and child mandatory</li>
+                                        <li>M-M: parent mandatory and child mandatory</li>
+                                    </ul>
+                                </li>
+                                <li>We will use the term <strong>action</strong> to mean a minimum cardinality enforcement action.</li>
+                                <li>No action needs to be taken for O-O relationships.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Cascading Updates and Deletes</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A <strong>cascading update</strong> occurs when a change to the parent’s primary key is applied to the child’s foreign key.
+                                    <ul>
+                                        <li>Surrogate keys never change and there is no need for cascading updates when using them.</li>
+                                    </ul>
+                                </li>
+                                <li>A <strong>cascading delete</strong> occurs when associated child rows are deleted along with the deletion of a parent row.
+                                    <ul>
+                                        <li><strong>Strong</strong> entities generally do not cascade deletes.</li>
+                                        <li><strong>Weak</strong> entities generally do cascade deletes.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Parent Is Required (M-O)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A publisher may have published a book.</li>
+                                <li>A publisher can publish many books.</li>
+                                <li>A book must be published by a publisher.</li>
+                                <li>A book can only be published by one publisher.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_Books_MO.jpg" alt="M-O associations" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Publisher is the parent while books are the children.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Parent Is Required (M-O)</h3>
+
+                        <div>
+                            <img src="assets/C04/Step3_Books_MO.jpg" alt="M-O associations" width="700">
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_Books_MO_Actions.png" alt="M-O association actions" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Parent Is Required (M-O)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li><strong>Implementing</strong> actions for M-O associations
+                                    <ul>
+                                        <li>Make sure that:
+                                            <ul>
+                                                <li>Every child has a parent.</li>
+                                                <li>Operations never create orphans.</li>
+                                            </ul>
+                                        </li>
+                                        <li>The DBMS will enforce the action as long as:
+                                            <ul>
+                                                <li>Referential integrity constraints are properly defined.</li>
+                                                <li>The foreign key column has a null status of 'NOT NULL'.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step a – Parent Is Required (M-O)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>When the child entity is a strong entity cascaded deletion is mostly forbidden.
+                                    <ul>
+                                        <li>Children have to be assigned another parent before the parent can be deleted.</li>
+                                    </ul>
+                                </li>
+                                <li>In case of weak child entities cascaded deletion is a good option.
+                                    <ul>
+                                        <li>When the parent is deleted most of the time the weak child information is useless anyway.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – Child Is Required (O-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A woman must have a pair of shoes.</li>
+                                <li>A woman may have many shoes.</li>
+                                <li>A pair of shoes may be owned by a woman.</li>
+                                <li>A pair of shoes can by owned by one woman.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_Women_OM.jpg" alt="O-M associations" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The parent is the woman, the shoes are the children.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – Child Is Required (O-M)</h3>
+
+                        <div>
+                            <img src="assets/C04/Step3_Women_OM.jpg" alt="O-M associations" width="600">
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_Women_OM_Actions.png" alt="O-M association actions" width="600">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>The parent is the woman, the shoes are the children.</li>
+                                <li>A lot harder to enforce! Need for <strong>triggers</strong></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step b – Child Is Required (O-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li><strong>Implementing</strong> actions for O-M associations
+                                    <ul>
+                                        <li>The DBMS does not provide much help.</li>
+                                        <li>Triggers or other application codes will need to be written.
+                                            <ul>
+                                                <li>A trigger is a stored program that is executed by the DBMS whenever a specified event occurs on a specified table or view.</li>
+                                                <li>A trigger is defined based on a table action:
+                                                    <ul>
+                                                        <li>on delete</li>
+                                                        <li>on insert</li>
+                                                        <li>on update</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Parent &amp; Child are Required (M-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>A database which holds legendary highscores of players.
+                                    <ul>
+                                        <li>A player must have a highscore.</li>
+                                        <li>A player may have many highscores.</li>
+                                        <li>A highscore is owned by a single player.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_Highscores_MM.jpg" alt="M-M associations" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Player is the parent, highscores are the children.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Parent &amp; Child are Required (M-M)</h3>
+
+                        <div>
+                            <img src="assets/C04/Step3_Highscores_MM.jpg" alt="M-M associations" width="700">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>This is extremely hard to enforce and can only be enforces by specialized triggers.
+                                    <ul>
+                                        <li>Because of dependencies triggers can deadlock each other.</li>
+                                        <li>If possible we place this logic in higher application layers.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Parent &amp; Child are Required (M-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li><strong>Implementing</strong> actions for M-M associations
+                                    <ul>
+                                        <li>The worst of all possible worlds
+                                            <ul>
+                                                <li>Especially in strong entity relationships.</li>
+                                                <li>All actions must be applied simultaneously.</li>
+                                                <li>Complicated and careful application programming will be needed.</li>
+                                            </ul>
+                                        </li>
+                                        <li>In relationships between strong and weak entities the problem is often easier when all transactions are initiated from the strong entity side.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Parent &amp; Child are Required (M-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li><strong>Implementing</strong> actions for M-M (with weak children)
+                                    <ul>
+                                        <li>In relationships between strong and weak entities it is often possible to ignore the action on the children.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Parent &amp; Child are Required (M-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li><strong>Implementing</strong> actions for M-M (with weak children)
+                                    <ul>
+                                        <li>In relationships between strong and weak entities it is often possible to ignore the action on the children.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_MM_WeakChildren_ParentReq.png" alt="M-M associations" height="200">
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/Step3_MM_WeakChildren_ChildReq.png" alt="M-M associations" height="200">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Step c – Parent &amp; Child are Required (M-M)</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <img src="assets/C04/Step3_Companies_MM.png" style="float: right" alt="M-M associations" height="400">
+                                <li><strong>Implementing</strong> actions for M-M (with weak children)
+                                    <ul>
+                                        <li>This is because a phone contact will mostly be added, removed or updated from the company context.
+                                            <ul>
+                                                <li>This will for example be managed by a frontend web application.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Actions on parents will be required.
+                                            <ul>
+                                                <li>When adding a company we can first create a phone contact with null values.</li>
+                                                <li>Deletion actions are mostly cascaded.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Enforcing Minimum Cardinality</h3>
+
+                        <div>
+                            <img src="assets/C04/Step3_ActionsOverview.png" alt="Overview of actions" width="700">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Remember this ?</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>1:1 Strong Entity Relationships</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/PreferedImplementation_Optional.jpg" alt="1:1 Strong Entity Relationships" width="500">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Preferable implementation?</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Remember this ?</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>1:1 Strong Entity Relationships</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img src="assets/C04/PreferedImplementation_Mandatory.png" alt="1:1 Strong Entity Relationships" width="500">
+                        </div>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>And what about now ?</li>
+                            </ul>
+                        </div>
+
+                        <!-- Implementation (b) is preferred. -->
+                        <!-- Locker is considered the parent here (child is the one with the foreign key). So this is an M-O association -->
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Useful sites and info</h2>
+                        <!-- <img src="assets/C01/DataAndMeaning.png" alt="Data and the meaning of it"> -->
+                    </section>
+
+                    <section>
+                        <h3>Tips</h3>
+
+                        <div class="alignleft">
+                            <ul>
+                                <li>Child references the parent!</li>
+                                <li>First of all, the parent is table which is referenced by FK from child. So you can't say that your parent table references the child: it's not correct.</li>
+                                <li>Secondly, 1:1 relations can be made through:
+                                    <ul>
+                                        <li>Primary Keys in both tables
+                                            <ul>
+                                                <li>Subtypes</li>
+                                            </ul>
+                                        </li>
+                                        <li>Primary Key in parent and Unique Foreign Key in child</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
             </div>
 
         </div>
